@@ -1,0 +1,23 @@
+# Visual Studio
+.vs/
+.vscode/
+
+# Build Results
+bin/
+obj/
+
+# User-specific files
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# NuGet
+*.nupkg
+project.lock.json
+packages/
+
