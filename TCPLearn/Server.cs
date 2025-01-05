@@ -3,8 +3,6 @@ using System.Net.Sockets;
 
 namespace TCPLearn;
 
-
-
 public class Server {
 	public delegate Task MessageHandler(int clientId, byte[] data, CancellationToken cancellationToken);
 #if DEBUG
