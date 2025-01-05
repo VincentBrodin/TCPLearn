@@ -1,6 +1,5 @@
 ﻿using System.Net;
 using System.Net.Sockets;
-using System.Runtime.InteropServices;
 
 namespace TCPLearn;
 
@@ -121,7 +120,6 @@ public class Client {
 	/// <param name="handlerId">The unique identifier for the message type.</param>
 	/// <param name="dataBuffer">The message data.</param>
 	/// <param name="cancellationToken">(Optional) A token to monitor for cancellation requests.</param>
-	/// <returns></returns>
 	public async Task SendMessage(uint handlerId, byte[] dataBuffer, CancellationToken cancellationToken = new()) {
 		try {
 			NetworkStream ns = tcpClient.GetStream();

@@ -197,7 +197,6 @@ public class Server {
 	/// <param name="handlerId">The unique identifier for the message type.</param>
 	/// <param name="dataBuffer">The message data.</param>
 	/// <param name="cancellationToken">(Optional) A token to monitor for cancellation requests.</param>
-	/// <returns></returns>
 	public async Task SendMessage(IEnumerable<int> clientsId, uint handlerId, byte[] dataBuffer, CancellationToken cancellationToken = new()) {
 		try {
 			foreach (int clientId in clientsId) {
