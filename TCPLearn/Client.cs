@@ -10,7 +10,7 @@ public class Client {
 	public event ConnectionChanged? OnDisconnect;
 
 	private readonly TcpClient tcpClient;
-	private bool isRunning;
+	public bool IsRunning { get; private set; }
 
 	private readonly List<Task> activeTasks = [];
 	private readonly CancellationTokenSource connectedTokenSource = new();
@@ -30,14 +30,14 @@ public class Client {
 	/// <param name="port">The port to connect to.</param>
 	public void Connect(IPAddress iPAddress, int port) {
 		try {
-			tcpClient.Connect(iPAddress, port);
+			tcpClient.ConnectAsync(iPAddress, port).Wait();
 		}
 		catch (Exception exception) {
 			Console.WriteLine($"Could not connect: {exception.Message}");
 			tcpClient.Close();
 			return;
 		}
-		isRunning = true;
+		IsRunning = true;
 
 		activeTasks.Add(Task.Run(() => TaskListenForMessages(connectedTokenSource.Token), connectedTokenSource.Token));
 
@@ -48,10 +48,10 @@ public class Client {
 	/// Closes the connection to the server and stops all associated tasks.
 	/// </summary>
 	public void Disconnect() {
-		if (!isRunning) {
+		if (!IsRunning) {
 			return;
 		}
-		isRunning = false;
+		IsRunning = false;
 
 		tcpClient.Close();
 		connectedTokenSource.Cancel();

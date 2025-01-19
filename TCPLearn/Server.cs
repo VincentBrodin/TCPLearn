@@ -10,7 +10,7 @@ public class Server {
 #endif
 
 	private readonly TcpListener listener;
-	private bool isRunning;
+	public bool IsRunning { get; private set; }
 
 	private readonly Dictionary<int, TcpClient> connectedClients = [];
 	private int runningClientId;
@@ -34,7 +34,7 @@ public class Server {
 		cancellationTokenSource = new CancellationTokenSource();
 		activeTasks.Add(Task.Run(() => TaskAcceptListener(cancellationTokenSource.Token)));
 
-		isRunning = true;
+		IsRunning = true;
 
 		Console.WriteLine("Server started.");
 	}
@@ -43,10 +43,10 @@ public class Server {
 	/// Stops the server and disconnects all clients.
 	/// </summary>
 	public void Stop() {
-		if (!isRunning) {
+		if (!IsRunning) {
 			return;
 		}
-		isRunning = false;
+		IsRunning = false;
 
 		cancellationTokenSource.Cancel();
 

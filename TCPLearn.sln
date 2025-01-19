@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCPLearn", "TCPLearn\TCPLearn.csproj", "{7BA91E0C-9E2D-4459-8F77-4D0408993716}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{EB6E7060-5895-42BF-9D74-44DB4A335A66}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{302081CF-3BC5-45B8-9BE0-4D8E5B48278A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{0242D2EC-E0F0-446D-ADB6-CB87C0198DFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{302081CF-3BC5-45B8-9BE0-4D8E5B48278A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{302081CF-3BC5-45B8-9BE0-4D8E5B48278A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{302081CF-3BC5-45B8-9BE0-4D8E5B48278A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0242D2EC-E0F0-446D-ADB6-CB87C0198DFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0242D2EC-E0F0-446D-ADB6-CB87C0198DFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0242D2EC-E0F0-446D-ADB6-CB87C0198DFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0242D2EC-E0F0-446D-ADB6-CB87C0198DFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
